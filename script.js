@@ -1,66 +1,75 @@
-setTimeout(()=>{
 
-document.querySelector(".loader").style.display="none";
+// Pantalla de carga
+setTimeout(() => {
+    document.querySelector(".loader").style.display = "none";
+    document.querySelector(".contenido").classList.remove("oculto");
+    document.querySelector(".contenido").style.opacity = "1";
+}, 3000);
 
-document.querySelector(".contenido").classList.remove("oculto");
+// Corazones flotando
+function crearCorazon() {
+    const corazon = document.createElement("div");
+    corazon.className = "corazon";
+    corazon.innerHTML = "❤️";
+    corazon.style.left = Math.random() * 100 + "vw";
+    corazon.style.fontSize = (20 + Math.random() * 30) + "px";
 
-document.querySelector(".contenido").style.opacity="1";
+    document.body.appendChild(corazon);
 
-},3000);
-
-document.getElementById("entrar").onclick=function(){
-
-alert("Bienvenida mi amor ❤️");
-
-}
-function crearCorazon(){
-
-const corazon=document.createElement("div");
-
-corazon.className="corazon";
-
-corazon.innerHTML="❤️";
-
-corazon.style.left=Math.random()*100+"vw";
-
-corazon.style.fontSize=(20+Math.random()*25)+"px";
-
-document.body.appendChild(corazon);
-
-setTimeout(()=>{
-corazon.remove();
-},8000);
-
+    setTimeout(() => {
+        corazon.remove();
+    }, 8000);
 }
 
-setInterval(crearCorazon,500);
-const mensaje=`Mi niña ❤️
+setInterval(crearCorazon, 500);
 
-Si estás leyendo esto es porque quiero recordarte lo importante que eres para mí.
+// Carta
+const mensaje = `Mi niña ❤️
 
-Gracias por cada momento, por cada sonrisa y por acompañarme durante todo este tiempo.
+Si hoy estás viendo esta página...
 
-Prometo seguir creando muchos más recuerdos contigo.
+Quiero que sepas que no fue hecha por obligación.
 
-Te amo muchísimo. ❤️`;
+La hice porque eres una persona muy especial para mí.
 
-let i=0;
+Cada foto...
+Cada video...
+Cada recuerdo...
 
-function escribirCarta(){
+Es una parte de nuestra historia.
 
-if(i<mensaje.length){
-document.getElementById("carta").innerHTML+=mensaje.charAt(i);
-i++;
-setTimeout(escribirCarta,45);
+Gracias por aparecer en mi vida.
+
+Te amo muchísimo.
+
+Con amor...
+
+Alber ❤️`;
+
+let i = 0;
+
+function escribirCarta() {
+
+    if (i < mensaje.length) {
+
+        document.getElementById("carta").innerHTML += mensaje.charAt(i);
+
+        i++;
+
+        setTimeout(escribirCarta, 40);
+
+    }
+
 }
 
-}
+document.getElementById("entrar").onclick = function () {
 
-document.getElementById("entrar").addEventListener("click",()=>{
+    this.style.display = "none";
 
-document.getElementById("carta").innerHTML="";
-i=0;
+    document.getElementById("carta").innerHTML = "";
 
-setTimeout(escribirCarta,700);
+    i = 0;
 
-});
+    escribirCarta();
+
+};

@@ -34,11 +34,33 @@ corazon.remove();
 }
 
 setInterval(crearCorazon,500);
-#carta{
-max-width:90%;
-margin:40px auto;
-font-size:22px;
-line-height:1.8;
-color:white;
-white-space:pre-wrap;
+const mensaje=`Mi niña ❤️
+
+Si estás leyendo esto es porque quiero recordarte lo importante que eres para mí.
+
+Gracias por cada momento, por cada sonrisa y por acompañarme durante todo este tiempo.
+
+Prometo seguir creando muchos más recuerdos contigo.
+
+Te amo muchísimo. ❤️`;
+
+let i=0;
+
+function escribirCarta(){
+
+if(i<mensaje.length){
+document.getElementById("carta").innerHTML+=mensaje.charAt(i);
+i++;
+setTimeout(escribirCarta,45);
 }
+
+}
+
+document.getElementById("entrar").addEventListener("click",()=>{
+
+document.getElementById("carta").innerHTML="";
+i=0;
+
+setTimeout(escribirCarta,700);
+
+});

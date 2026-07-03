@@ -34,3 +34,11 @@ corazon.remove();
 }
 
 setInterval(crearCorazon,500);
+#carta{
+max-width:90%;
+margin:40px auto;
+font-size:22px;
+line-height:1.8;
+color:white;
+white-space:pre-wrap;
+}

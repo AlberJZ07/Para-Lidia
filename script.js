@@ -158,4 +158,17 @@ btnMusica.innerHTML="⏸️";
 reproduciendo=!reproduciendo;
 
 });
+function abrirSobre(){
+
+document.querySelector(".tapa").style.transform="rotateX(180deg)";
+
+setTimeout(()=>{
+
+document.getElementById("textoCarta").style.display="block";
+
+escribirCarta();
+
+},600);
+
+}
     

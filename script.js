@@ -1,18 +1,16 @@
 // ==============================
-// ❤️ PROYECTO PARA LIDIA V1.0
+// ❤️ PROYECTO PARA LIDIA
 // ==============================
 
 // Botón comenzar
 const boton = document.getElementById("entrar");
 
 boton.addEventListener("click", () => {
-
     document.getElementById("carta").scrollIntoView({
         behavior: "smooth"
     });
 
-    setTimeout(escribirCarta,700);
-
+    setTimeout(escribirCarta, 700);
 });
 
 // ==============================
@@ -23,21 +21,17 @@ const mensaje = `
 
 Mi niña ❤️
 
-Si hoy estás viendo esta página...
+Si estás leyendo esto...
 
-Quiero que sepas que cada parte de este lugar fue hecha pensando en ti.
+Quiero que sepas que cada rincón de esta página fue hecho pensando en ti.
 
-No es solo una página.
+Gracias por aparecer en mi vida.
 
-Es un pequeño rincón donde quiero guardar nuestra historia.
+Gracias por cada risa.
 
 Gracias por cada abrazo.
 
-Gracias por cada sonrisa.
-
-Gracias por llegar a mi vida.
-
-Espero seguir creando muchísimos recuerdos contigo.
+Y gracias por regalarme tantos recuerdos hermosos.
 
 Te amo muchísimo.
 
@@ -48,34 +42,33 @@ Alber ❤️
 `;
 
 let i = 0;
-
 let escribiendo = false;
 
-function escribirCarta(){
+function escribirCarta() {
 
-if(escribiendo) return;
+    if (escribiendo) return;
 
-escribiendo=true;
+    escribiendo = true;
 
-const carta=document.getElementById("textoCarta");
+    const carta = document.getElementById("textoCarta");
 
-carta.innerHTML="";
+    carta.innerHTML = "";
 
-function escribir(){
+    function escribir() {
 
-if(i<mensaje.length){
+        if (i < mensaje.length) {
 
-carta.innerHTML+=mensaje.charAt(i);
+            carta.innerHTML += mensaje.charAt(i);
 
-i++;
+            i++;
 
-setTimeout(escribir,35);
+            setTimeout(escribir, 35);
 
-}
+        }
 
-}
+    }
 
-escribir();
+    escribir();
 
 }
 
@@ -83,58 +76,61 @@ escribir();
 // CORAZONES
 // ==============================
 
-function crearCorazon(){
+function crearCorazon() {
 
-const corazon=document.createElement("div");
+    const corazon = document.createElement("div");
 
-corazon.className="corazon";
+    corazon.className = "corazon";
 
-corazon.innerHTML="❤️";
+    corazon.innerHTML = "❤️";
 
-corazon.style.left=Math.random()*100+"vw";
+    corazon.style.left = Math.random() * 100 + "vw";
 
-corazon.style.fontSize=(18+Math.random()*30)+"px";
+    corazon.style.fontSize = (18 + Math.random() * 30) + "px";
 
-document.body.appendChild(corazon);
+    document.body.appendChild(corazon);
 
-setTimeout(()=>{
+    setTimeout(() => {
 
-corazon.remove();
+        corazon.remove();
 
-},8000);
+    }, 8000);
 
 }
 
-setInterval(crearCorazon,450);
+setInterval(crearCorazon, 450);
 
 // ==============================
-// MENSAJE FINAL
+// VISOR DE FOTOS
 // ==============================
 
-console.log("❤️ Proyecto Para Lidia iniciado correctamente.");
+const fotos = document.querySelectorAll(".foto");
 
-const fechaInicio = new Date("2023-01-01");
+const visor = document.getElementById("visor");
 
-function actualizarTiempo() {
-    const hoy = new Date();
+const fotoGrande = document.getElementById("fotoGrande");
 
-    let años = hoy.getFullYear() - fechaInicio.getFullYear();
-    let meses = hoy.getMonth() - fechaInicio.getMonth();
-    let dias = hoy.getDate() - fechaInicio.getDate();
+fotos.forEach(foto => {
 
-    if (dias < 0) {
-        meses--;
-        const ultimoMes = new Date(hoy.getFullYear(), hoy.getMonth(), 0);
-        dias += ultimoMes.getDate();
-    }
+    foto.addEventListener("click", () => {
 
-    if (meses < 0) {
-        años--;
-        meses += 12;
-    }
+        visor.style.display = "flex";
 
-    document.getElementById("tiempo").innerHTML =
-        `❤️ ${años} años, ${meses} meses y ${dias} días juntos ❤️`;
+        fotoGrande.src = foto.src;
+
+    });
+
+});
+
+function cerrarFoto() {
+
+    visor.style.display = "none";
+
 }
 
-actualizarTiempo();
+// ==============================
+
+console.log("❤️ Proyecto iniciado correctamente");
+
+
+    

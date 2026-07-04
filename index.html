@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -19,42 +20,49 @@
 <body>
 
 <div id="estrellas"></div>
-
 <div id="corazones"></div>
+
+<audio id="musica" loop>
+    <source src="music/cancion.mp3" type="audio/mpeg">
+</audio>
+
+<button id="btnMusica">🎵</button>
 
 <section class="inicio">
 
 <h1>❤️</h1>
 
-<h2>Para mi niña</h2>
+<h2>Para la niña que cambió mi vida</h2>
 
 <h3>Lidia Ayne Garcia Ruiz</h3>
 
 <p>
 
-Este pequeño rincón fue creado especialmente para ti.
+Si llegaste hasta aquí...
 
-Cada palabra, cada foto y cada recuerdo que encontrarás aquí tiene algo en común...
+es porque quiero mostrarte algo que hice con muchísimo cariño.
 
-Todo nació gracias a ti.
+Cada detalle de esta página fue pensado para ti.
+
+Espero que al recorrerla recuerdes lo feliz que soy desde que llegaste a mi vida.
 
 </p>
 
 <button id="entrar">
 
-Comenzar ❤️
+Abrir mi sorpresa ❤️
 
 </button>
 
 </section>
 
-    <section id="contador">
-    <h2>⏳ Nuestro tiempo juntos</h2>
+<section id="contador">
 
-    <div id="tiempo">
-        Cargando...
-    </div>
-    </section>
+<h2>⏳ Nuestro tiempo juntos</h2>
+
+<div id="tiempo"></div>
+
+</section>
 
 <section id="carta">
 
@@ -72,63 +80,55 @@ Comenzar ❤️
 
 </div>
 
-<div id="textoCarta" style="display:none;">
-
-</div>
+<div id="textoCarta" style="display:none;"></div>
 
 </section>
 
 <section id="galeria">
 
-<h2>📸 Nuestros recuerdos 🤍</h2>
+<h2>📸 Nuestros recuerdos</h2>
 
 <p class="subtitulo">
-Cada momento contigo es mi recuerdo favorito.
+
+Cada fotografía guarda un pedacito de nuestra historia.
+
 </p>
 
 <div class="imagenes">
 
-  <img src="IMG-20260212-WA0115.jpg" class="foto">
+<img src="IMG-20260212-WA0115.jpg" class="foto">
 
-  <img src="IMG-20241113-WA0039.jpg" class="foto">
+<img src="IMG-20241113-WA0039.jpg" class="foto">
 
-  <img src="IMG-20241202-WA0006(1).jpg" class="foto">
+<img src="IMG-20241202-WA0006(1).jpg" class="foto">
 
-  <img src="IMG-20250312-WA0094.jpg" class="foto">
+<img src="IMG-20250312-WA0094.jpg" class="foto">
 
-  <img src="IMG-20260212-WA0011.jpg" class="foto">
+<img src="IMG-20260212-WA0011.jpg" class="foto">
 
-  <img src="IMG-20260212-WA0042.jpg" class="foto">
+<img src="IMG-20260212-WA0042.jpg" class="foto">
 
-  <img src="IMG-20260212-WA0043.jpg" class="foto">
+<img src="IMG-20260212-WA0043.jpg" class="foto">
+
+</div>
 
 </div>
 
 <p class="frase">
-No son solo fotos... son pedacitos de nuestra historia ❤️
+Cada recuerdo contigo es un tesoro que guardaré para siempre. ❤️
 </p>
 
 </section>
 
 <section id="videos">
 
-<h2>🎥 Nuestros momentos</h2>
+<h2>🎥 Nuestros momentos favoritos</h2>
 
 <div class="video">
 
-Aquí irán nuestros videos ❤️
-
-</div>
-
-</section>
-
-<section id="contador">
-
-<h2>⏳ Nuestro tiempo</h2>
-
-<div id="tiempo">
-
-Muy pronto...
+<p>
+Muy pronto aquí estarán nuestros videos más bonitos juntos. ❤️
+</p>
 
 </div>
 
@@ -136,32 +136,38 @@ Muy pronto...
 
 <section id="final">
 
-<h2>❤️ Gracias por existir ❤️</h2>
+<h2>❤️ Gracias por llegar a mi vida ❤️</h2>
 
 <p>
 
-Si algún día vuelves a abrir esta página...
+No importa cuánto tiempo pase...
 
-quiero que recuerdes una sola cosa...
+Siempre elegiría volver a conocerte.
 
-Te amo muchísimo.
+Gracias por cada sonrisa.
+
+Gracias por cada abrazo.
+
+Gracias por existir.
+
+Te amo muchísimo, Lidia.
+
+Con todo mi corazón...
+
+Alber ❤️
 
 </p>
 
 </section>
 
-    <div id="visor" onclick="cerrarFoto()">
-  <img id="fotoGrande">
-    </div>
+<div id="visor" onclick="cerrarFoto()">
 
-    <audio id="musica" loop>
-    <source src="music/cancion.mp3" type="audio/mpeg">
-</audio>
+<img id="fotoGrande">
 
-<button id="btnMusica">🎵</button>
+</div>
 
 <script src="script.js"></script>
 
 </body>
 
-</html>
+    </html>

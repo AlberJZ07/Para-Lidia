@@ -132,5 +132,30 @@ function cerrarFoto() {
 
 console.log("❤️ Proyecto iniciado correctamente");
 
+// ==============================
+// MÚSICA
+// ==============================
 
+const musica = document.getElementById("musica");
+const btnMusica = document.getElementById("btnMusica");
+
+let reproduciendo = false;
+
+btnMusica.addEventListener("click",()=>{
+
+if(reproduciendo){
+
+musica.pause();
+btnMusica.innerHTML="🎵";
+
+}else{
+
+musica.play();
+btnMusica.innerHTML="⏸️";
+
+}
+
+reproduciendo=!reproduciendo;
+
+});
     

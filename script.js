@@ -1,75 +1,114 @@
+// ==============================
+// ❤️ PROYECTO PARA LIDIA V1.0
+// ==============================
 
-// Pantalla de carga
-setTimeout(() => {
-    document.querySelector(".loader").style.display = "none";
-    document.querySelector(".contenido").classList.remove("oculto");
-    document.querySelector(".contenido").style.opacity = "1";
-}, 3000);
+// Botón comenzar
+const boton = document.getElementById("entrar");
 
-// Corazones flotando
-function crearCorazon() {
-    const corazon = document.createElement("div");
-    corazon.className = "corazon";
-    corazon.innerHTML = "❤️";
-    corazon.style.left = Math.random() * 100 + "vw";
-    corazon.style.fontSize = (20 + Math.random() * 30) + "px";
+boton.addEventListener("click", () => {
 
-    document.body.appendChild(corazon);
+    document.getElementById("carta").scrollIntoView({
+        behavior: "smooth"
+    });
 
-    setTimeout(() => {
-        corazon.remove();
-    }, 8000);
-}
+    setTimeout(escribirCarta,700);
 
-setInterval(crearCorazon, 500);
+});
 
-// Carta
-const mensaje = `Mi niña ❤️
+// ==============================
+// CARTA
+// ==============================
+
+const mensaje = `
+
+Mi niña ❤️
 
 Si hoy estás viendo esta página...
 
-Quiero que sepas que no fue hecha por obligación.
+Quiero que sepas que cada parte de este lugar fue hecha pensando en ti.
 
-La hice porque eres una persona muy especial para mí.
+No es solo una página.
 
-Cada foto...
-Cada video...
-Cada recuerdo...
+Es un pequeño rincón donde quiero guardar nuestra historia.
 
-Es una parte de nuestra historia.
+Gracias por cada abrazo.
 
-Gracias por aparecer en mi vida.
+Gracias por cada sonrisa.
+
+Gracias por llegar a mi vida.
+
+Espero seguir creando muchísimos recuerdos contigo.
 
 Te amo muchísimo.
 
 Con amor...
 
-Alber ❤️`;
+Alber ❤️
+
+`;
 
 let i = 0;
 
-function escribirCarta() {
+let escribiendo = false;
 
-    if (i < mensaje.length) {
+function escribirCarta(){
 
-        document.getElementById("carta").innerHTML += mensaje.charAt(i);
+if(escribiendo) return;
 
-        i++;
+escribiendo=true;
 
-        setTimeout(escribirCarta, 40);
+const carta=document.getElementById("textoCarta");
 
-    }
+carta.innerHTML="";
+
+function escribir(){
+
+if(i<mensaje.length){
+
+carta.innerHTML+=mensaje.charAt(i);
+
+i++;
+
+setTimeout(escribir,35);
 
 }
 
-document.getElementById("entrar").onclick = function () {
+}
 
-    this.style.display = "none";
+escribir();
 
-    document.getElementById("carta").innerHTML = "";
+}
 
-    i = 0;
+// ==============================
+// CORAZONES
+// ==============================
 
-    escribirCarta();
+function crearCorazon(){
 
-};
+const corazon=document.createElement("div");
+
+corazon.className="corazon";
+
+corazon.innerHTML="❤️";
+
+corazon.style.left=Math.random()*100+"vw";
+
+corazon.style.fontSize=(18+Math.random()*30)+"px";
+
+document.body.appendChild(corazon);
+
+setTimeout(()=>{
+
+corazon.remove();
+
+},8000);
+
+}
+
+setInterval(crearCorazon,450);
+
+// ==============================
+// MENSAJE FINAL
+// ==============================
+
+console.log("❤️ Proyecto Para Lidia iniciado correctamente.");

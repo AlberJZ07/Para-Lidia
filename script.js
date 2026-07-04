@@ -112,3 +112,29 @@ setInterval(crearCorazon,450);
 // ==============================
 
 console.log("❤️ Proyecto Para Lidia iniciado correctamente.");
+
+const fechaInicio = new Date("2023-01-01");
+
+function actualizarTiempo() {
+    const hoy = new Date();
+
+    let años = hoy.getFullYear() - fechaInicio.getFullYear();
+    let meses = hoy.getMonth() - fechaInicio.getMonth();
+    let dias = hoy.getDate() - fechaInicio.getDate();
+
+    if (dias < 0) {
+        meses--;
+        const ultimoMes = new Date(hoy.getFullYear(), hoy.getMonth(), 0);
+        dias += ultimoMes.getDate();
+    }
+
+    if (meses < 0) {
+        años--;
+        meses += 12;
+    }
+
+    document.getElementById("tiempo").innerHTML =
+        `❤️ ${años} años, ${meses} meses y ${dias} días juntos ❤️`;
+}
+
+actualizarTiempo();

@@ -172,3 +172,29 @@ opacity:0;
     margin:20px auto;
     box-shadow:0 0 20px rgba(255,255,255,.3);
 }
+.imagenes{
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    padding:15px;
+    scroll-behavior:smooth;
+}
+
+.imagenes::-webkit-scrollbar{
+    display:none;
+}
+
+.foto{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:20px;
+    border:3px solid white;
+    flex-shrink:0;
+    transition:0.4s;
+    box-shadow:0 0 15px rgba(255,255,255,.3);
+}
+
+.foto:hover{
+    transform:scale(1.08);
+}
